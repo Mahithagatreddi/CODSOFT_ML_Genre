@@ -136,8 +136,10 @@ def clean_text(text):
 
 @st.cache_resource
 def load_models():
-    model_path = 'models/logistic_regression.joblib'
-    vectorizer_path = 'models/vectorizer.joblib'
+    # Get the directory where app.py is located to ensure paths work on Streamlit Cloud
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(base_dir, 'models', 'logistic_regression.joblib')
+    vectorizer_path = os.path.join(base_dir, 'models', 'vectorizer.joblib')
     
     if os.path.exists(model_path) and os.path.exists(vectorizer_path):
         model = joblib.load(model_path)

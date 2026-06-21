@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environments
+.env
+venv/
+env/
+.venv/
+
+# Raw Data
+# We ignore the data folder so you don't accidentally push the massive Kaggle text files to GitHub.
+data/*
+!data/.gitkeep
+
+# Note: We are EXPLICITLY NOT ignoring the 'models/' folder. 
+# Streamlit Community Cloud requires your trained .joblib files to be uploaded to GitHub so the web app can run!
